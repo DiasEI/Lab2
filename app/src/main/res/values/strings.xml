@@ -4,4 +4,12 @@
     <string name="delete">Delete</string>
     <string name="back">Back</string>
     <string name="observation">Observation</string>
+    <string name="add">Create</string>
+    <string name="to_short">Note must contain at least 5 characters!</string>
+    <string name="saved">Saved successfully!</string>
+    <string name="updated">Updated successfully!</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="delete_success">Deleted successfully!</string>
+    <string name="delete_confirm">Are you sure you want to delete the Note?</string>
 </resources>

@@ -18,7 +18,6 @@ import com.example.notes_cm.R
 import com.example.notes_cm.data.entities.Note
 import com.example.notes_cm.data.vm.NoteViewModel
 import java.util.Calendar
-import java.util.Date
 
 class UpdateFragment : Fragment() {
     private  val args by navArgs<UpdateFragmentArgs>()
@@ -56,7 +55,7 @@ class UpdateFragment : Fragment() {
         val noteText = view?.findViewById<EditText>(R.id.updateNote)?.text.toString()
 
         if(noteText.isEmpty()) {
-            makeText(context , "Não pode atualizar uma nota vazia!", Toast.LENGTH_LONG).show()
+            makeText(context , getString(R.string.to_short), Toast.LENGTH_LONG).show()
         }
         else {
             val currentDate = Calendar.getInstance().time
@@ -64,24 +63,24 @@ class UpdateFragment : Fragment() {
 
             mNoteViewModel.updateNote(note)
 
-            makeText(requireContext(), "Nota atualizada com sucesso!", Toast.LENGTH_LONG).show()
+            makeText(requireContext(), getString(R.string.updated), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
     }
 
     private fun deleteNote() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Sim") { _, _ ->
+        builder.setPositiveButton(getString(R.string.yes)) { _, _ ->
             mNoteViewModel.deleteNote(args.currentNote)
             makeText(
                 requireContext(),
-                "Nota apagada com sucesso!",
+                getString(R.string.delete_success),
                 Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
-        builder.setNegativeButton("Não") { _, _ -> }
-        builder.setTitle("Apagar")
-        builder.setMessage("Tem a certeza que pretende apagar a Nota?")
+        builder.setNegativeButton(getString(R.string.no)) { _, _ -> }
+        builder.setTitle(getString(R.string.delete))
+        builder.setMessage(getString(R.string.delete_confirm))
         builder.create().show()
     }
 }

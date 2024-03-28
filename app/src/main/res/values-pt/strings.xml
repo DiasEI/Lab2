@@ -5,4 +5,12 @@
     <string name="delete">Apagar</string>
     <string name="back">Voltar</string>
     <string name="observation">Nota</string>
+    <string name="add">Criar</string>
+    <string name="to_short">A nota deve conter no mínimo 5 caracteres!</string>
+    <string name="saved">Gravado com sucesso!</string>
+    <string name="updated">Atualizado com sucesso!</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="delete_success">Apagado com sucesso!</string>
+    <string name="delete_confirm">Tem a certeza que pretende apagar a Nota?</string>
 </resources>

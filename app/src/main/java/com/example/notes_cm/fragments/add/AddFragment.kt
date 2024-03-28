@@ -43,7 +43,7 @@ class AddFragment : Fragment() {
         val noteText = view?.findViewById<EditText>(R.id.addNote)?.text.toString()
 
         if(noteText.length < 5) {
-            Toast.makeText(view?.context, "A nota deve conter no mínimo 5 caracteres!", Toast.LENGTH_LONG).show()
+            Toast.makeText(view?.context, getString(R.string.to_short), Toast.LENGTH_LONG).show()
         }
         else {
             val currentDate = Calendar.getInstance().time
@@ -51,7 +51,7 @@ class AddFragment : Fragment() {
 
             mNoteViewModel.addNote(note)
 
-            Toast.makeText(requireContext(), "Gravado com sucesso!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), getString(R.string.saved), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }
     }
